@@ -1,11 +1,6 @@
-table {
-  border: 3px double;
-}
-
-td, th {
-  border: 1px solid;
-}
-
+a, h1, h2, h3 { color: #990000; }
+table { border: 3px double; }
+td, th { border: 1px solid; }
 pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }

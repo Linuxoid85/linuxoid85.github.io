@@ -1,9 +1,12 @@
 {
+	"site_name": "Linuxoid85's blog",
 	"docdir": "/home/administrator/blog",
 	"toc": [
 		"README",
 		"stats/computing",
 		"stats/calmira",
-		"stats/russian-salary"
+		"stats/smi",
+		"stats/python-decorators",
+		"stats/gui"
 	]
 }

@@ -37,7 +37,11 @@ class gen():
         with open(f"{page}.md") as f:
             data = f.read()
             data = data.split(sep='\n')
-            title = data[0][2:]
+
+            if page != "README":
+                title = data[0][2:] + f" | {settings().get(CONFIG, 'site_name')}"
+            else:
+                title = data[0][2:]
 
             header = f"""<!DOCTYPE html>\n<html>\n<head>
             <meta charset="utf-8">
@@ -69,7 +73,6 @@ class gen():
                 TocExtension(), "fenced_code", "tables",
                 "def_list", "footnotes", "codehilite"
             ]
-            #exts.append(settings().get(CONFIG, "extensions"))
             
             data = markdown.markdown(content, extensions=exts)
             page = page_old

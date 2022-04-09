@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <meta charset="utf-8">
+            <link href="css/styles.css" rel="stylesheet" type="text/css">
+            <title>Декораторы в Python. Максимально краткое объяснение. | Linuxoid85's blog</title>
+            </head>
+<body>
+            
+<h1 id="python">Декораторы в Python. Максимально краткое объяснение.</h1>
+<hr />
+<h2 id="_1">Содержание</h2>
+<div class="toc">
+<ul>
+<li><a href="#python">Декораторы в Python. Максимально краткое объяснение.</a><ul>
+<li><a href="#_1">Содержание</a></li>
+<li><a href="#_2">Введение</a><ul>
+<li><a href="#_3">Предупреждение</a></li>
+</ul>
+</li>
+<li><a href="#_4">Определение</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_2">Введение</h2>
+<p>Доброго времени суток! Есть люди, которые не понимают декораторов в Python. Среди таких был и я. Поначалу я избегал их использования, но теперь использую. Пусть их применение не повсеместное, но и без этого они могут упростить код и сделать его короче, например.</p>
+<h3 id="_3">Предупреждение</h3>
+<blockquote>
+<p>Здесь я не буду объяснять, что такое декоратор. Это вы можете вычитать в интернете и литературе. Здесь я показываю на реальном примере то, для чего они предназначены и что делают.</p>
+</blockquote>
+<h2 id="_4">Определение</h2>
+<p><em>Декоратор</em> - это функция, принимающая в качестве аргумента другую функцию и каким-либо образом изменяя её поведение.</p>
+<p>Рассмотрим следующий код:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Вывод:</p>
+<div class="codehilite"><pre><span></span><code>Hello, World!
+</code></pre></div>
+
+<p>А теперь применим к ней декоратор, который сами же и напишем:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">def</span> <span class="nf">decorat</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;До вызова функции </span><span class="si">{</span><span class="n">func</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">func</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;После вызова функции </span><span class="si">{</span><span class="n">func</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">func</span>
+
+<span class="nd">@decorat</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Вывод:</p>
+<div class="codehilite"><pre><span></span><code>До вызова функции &lt;function func at 0x7faf8fde2680&gt;
+Hello, World!
+После вызова функции &lt;function func at 0x7faf8fde2680&gt;
+</code></pre></div>
+
+<p>Сравните выводы обоих скриптов.</p>
+<hr><p>Вернуться на <a href="/index.html">домашнюю страницу</a>.</p>
+<p>Copyright (C) 2022 Michail Krasnov</p>
+</body></html>
